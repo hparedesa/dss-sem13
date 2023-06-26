@@ -1,0 +1,9 @@
+1. Completar la documentacion para las 5 operaciones.
+2. Definir un schema para errores 500
+    ejemplo:
+        {
+            ErrorCode: 500,
+            MessageError: "Mensaje de error"
+        }
+3. Para el metodo POST y PUT mapear el esquema de error con la respuesta tipo 500.
+4. Probar desde Swagger la actualización de un registro.
