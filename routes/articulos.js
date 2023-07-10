@@ -17,9 +17,6 @@ const idLength = 6;
  *          required:
  *              - id
  *              - nombre
- *              - marca
- *              - precio
- *              - disponibilidad
  *          properties:
  *              id:
  *                  type: string

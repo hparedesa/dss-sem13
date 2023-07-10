@@ -38,12 +38,36 @@ const specs=swaggerJsDoc(options);
 
 const app = express();
 app.db = db;
+app.set('view engine','ejs');
 
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-app.use("/articulos",artRouter)
+app.use("/API/articulos",artRouter)
 app.use("/docs",swaggerUI.serve,swaggerUI.setup(specs));
+app.use(express.static(__dirname+'/public'));
+
+app.get("/",function(req, res){
+    res.render("home",{
+        nombre: "Guillermo",
+        apellido:"Paredes"
+    });
+});
+app.get("/bye",function(req,res){
+    res.render("bye");
+});
+app.get("/hello/:nombre",function(req, res){
+    res.render("home",{
+        nombre: req.params.nombre
+    });
+});
+
+app.get("/articulos",function(req,res){
+    res.render("articulos",{
+        nombre:"Guillermo Paredes",
+        articulos:["Articulo #1","Articulo #2","Articulo #3","Articulo #4"]
+    });
+});
 
 
 app.listen(PORT,() => console.log(`El servidor esta es corriendo en el puerto ${PORT}`));
