@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/header'); -%>
+    <body class="main-background">
+        <h1>Trabajo Practico - <%= nombre %>!!</h1>
+        <!--img src="https://m.media-amazon.com/images/I/81idlqFqcUL._AC_SL1500_.jpg"-->
+        <div>
+            <h1>Lista de Articulos</h1>
+            <ul id="listaArt">
+                <li>Articulo 1</li> 
+                <li>Articulo 2</li> 
+                <li>Articulo 3</li> 
+                <li>Articulo 4</li> 
+            </ul>
+        </div>
+        <div>
+            <h1>Registro de Articulos</h1>
+            <form>
+                <label>Nombre Articulo:</label>
+                <input type="text">
+                <button>Registrar</button>
+            </form>
+        </div>
+        <%- include('partials/footer'); -%>
+    </body>
+
+    
+
+
+</html>
